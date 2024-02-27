@@ -18,6 +18,7 @@ export default {
 <style scoped>
 .conAnouncement {
   height: 50px;
+  overflow: hidden;
 }
 .text-container {
   padding-top: 12px;

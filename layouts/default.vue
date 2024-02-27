@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app dark style="height: 100vw" :style="{ width: window?.innerWidth }">
     <Contactus />
     <Login />
     <Register />
