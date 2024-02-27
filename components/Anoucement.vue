@@ -1,6 +1,6 @@
 <template>
   <div class="conAnouncement secondary rounded-b-xl">
-    <div class="text-container">
+    <div class="text-container" style="white-space: nowrap">
       <p>{{ announcementText }}</p>
     </div>
   </div>
