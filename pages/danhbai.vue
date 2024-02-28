@@ -7,8 +7,8 @@
     <v-container>
       <v-row>
         <v-col
-          cols="12"
-          md="2"
+          cols="6"
+          md="3"
           sm="6"
           class="pa-0 mt-2 mb-2 px-2"
           v-for="i in 10"
@@ -20,7 +20,7 @@
             @mouseover="isHover = true"
             @mouseleave="isHover = false"
           >
-            <img src="/vuetify-logo.svg" alt="Card image" class="card-img" />
+            <img src="/bc.png" alt="Card image" class="card-img" />
             <div class="card-overlay" v-if="isHover">
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
@@ -35,8 +35,8 @@
     <v-container>
       <v-row>
         <v-col
-          cols="12"
-          md="2"
+          cols="6"
+          md="3"
           sm="6"
           class="pa-0 mt-2 mb-2 px-2"
           v-for="i in 35"
@@ -48,7 +48,7 @@
             @mouseover="isHover = true"
             @mouseleave="isHover = false"
           >
-            <img src="/vuetify-logo.svg" alt="Card image" class="card-img" />
+            <img src="/bc.png" alt="Card image" class="card-img" />
             <div class="card-overlay" v-if="isHover">
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>

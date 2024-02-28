@@ -12,7 +12,7 @@
             @mouseover="isHover = true"
             @mouseleave="isHover = false"
           >
-            <img src="/vuetify-logo.svg" alt="Card image" class="card-img" />
+            <img src="/BG.png" alt="Card image" class="card-img" />
             <div class="card-overlay" v-if="isHover">
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
@@ -38,11 +38,7 @@
                   @mouseover="isHover = true"
                   @mouseleave="isHover = false"
                 >
-                  <img
-                    src="/vuetify-logo.svg"
-                    alt="Card image"
-                    class="card-img"
-                  />
+                  <img src="/bc.png" alt="Card image" class="card-img" />
                   <div class="card-overlay" v-if="isHover">
                     <v-btn rounded color="secondary" @click="openLogin"
                       >chơi</v-btn

@@ -14,7 +14,7 @@
             <div
               v-for="(item, index) in titleGamehot"
               :key="index"
-              class="mx-1 gamehots rounded-xl"
+              class="mx-2 gamehots rounded-xl"
               :class="selectingHotgame == index ? 'secondary' : ''"
               @click="
                 ;(selectingHotgame = index),
@@ -45,11 +45,7 @@
                 @mouseover="isHover = true"
                 @mouseleave="isHover = false"
               >
-                <img
-                  src="/vuetify-logo.svg"
-                  alt="Card image"
-                  class="card-img"
-                />
+                <img src="/bc.png" alt="Card image" class="card-img" />
                 <div class="card-overlay" v-if="isHover">
                   <v-btn rounded color="secondary" @click="openLogin"
                     >chơi</v-btn
@@ -74,7 +70,7 @@
             @mouseover="isHover = true"
             @mouseleave="isHover = false"
           >
-            <img src="/vuetify-logo.svg" alt="Card image" class="card-img" />
+            <img src="/BG.png" alt="Card image" class="card-img" />
             <div class="card-overlay" v-if="isHover">
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
@@ -100,11 +96,7 @@
                   @mouseover="isHover = true"
                   @mouseleave="isHover = false"
                 >
-                  <img
-                    src="/vuetify-logo.svg"
-                    alt="Card image"
-                    class="card-img"
-                  />
+                  <img src="/bc.png" alt="Card image" class="card-img" />
                   <div class="card-overlay" v-if="isHover">
                     <v-btn rounded color="secondary" @click="openLogin"
                       >chơi</v-btn
@@ -130,7 +122,7 @@
             @mouseover="isHover = true"
             @mouseleave="isHover = false"
           >
-            <img src="/vuetify-logo.svg" alt="Card image" class="card-img" />
+            <img src="/BG.png" alt="Card image" class="card-img" />
             <div class="card-overlay" v-if="isHover">
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
@@ -156,11 +148,7 @@
                   @mouseover="isHover = true"
                   @mouseleave="isHover = false"
                 >
-                  <img
-                    src="/vuetify-logo.svg"
-                    alt="Card image"
-                    class="card-img"
-                  />
+                  <img src="/bc.png" alt="Card image" class="card-img" />
                   <div class="card-overlay" v-if="isHover">
                     <v-btn rounded color="secondary" @click="openLogin"
                       >chơi</v-btn
@@ -233,14 +221,16 @@ export default {
   grid-gap: 20px;
 }
 .gamehotcon {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  grid-gap: 20px;
+  display: flex;
+  padding: 10px 0;
+  overflow-x: auto;
+  width: 100%;
 }
 .gamehots {
   box-shadow: 0 2px 4px 1px #ddb72c;
   text-align: center;
-  width: 120px;
+  min-width: 110px;
+  max-width: 120px;
   padding: 10px;
   height: 140;
 }

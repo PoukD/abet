@@ -26,7 +26,7 @@
             <v-col
               cols="6"
               md="3"
-              sm="3"
+              sm="6"
               class="pa-0 mt-2 mb-2 px-2"
               v-for="i in 12"
               :key="i"
@@ -37,11 +37,7 @@
                 @mouseover="isHover = true"
                 @mouseleave="isHover = false"
               >
-                <img
-                  src="/vuetify-logo.svg"
-                  alt="Card image"
-                  class="card-img"
-                />
+                <img src="/bc.png" alt="Card image" class="card-img" />
                 <div class="card-overlay" v-if="isHover">
                   <v-btn rounded color="secondary" @click="openLogin"
                     >chơi</v-btn
@@ -57,15 +53,29 @@
         <v-container>
           <v-row>
             <v-col
-              cols="7"
-              style="display: flex; align-items: center; justify-content: left"
+              cols="12"
+              sm="7"
+              md="7"
+              lg="7"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
               class="appwhite--text"
             >
               Tổng số mặt hàng : 45
             </v-col>
             <v-col
-              cols="5"
-              style="display: flex; align-items: center; justify-content: right"
+              cols="12"
+              sm="5"
+              md="5"
+              lg="5"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
             >
               <v-pagination
                 v-model="page"
