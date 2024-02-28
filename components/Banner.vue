@@ -1,12 +1,14 @@
 <template>
   <div>
-    <v-row>
-      <v-col cols="12" class="pa-8">
-        <div class="banner secondary rounded-xl">
-          <img src="/banner.png" class="imgbanner" alt="" />
-        </div>
-      </v-col>
-    </v-row>
+    <v-container>
+      <v-row>
+        <v-col cols="12">
+          <div class="banner secondary rounded-xl">
+            <img src="/banner.png" class="imgbanner" alt="" />
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 <style scoped>
