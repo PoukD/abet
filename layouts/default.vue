@@ -44,16 +44,28 @@
       <img class="mr-2" src="/footer/bt1.png" style="width: 30%" alt="" />
       <v-spacer />
       <div
-        :class="mobileDevice ? 'px-1 py-0' : 'px-4 py-1'"
+        :class="mobileDevice ? 'py-1' : 'py-2'"
         class="selectingBg rounded-pill mr-3 appwhite--text navbtn"
         @click="openRegister"
+        style="
+          width: 95px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
       >
         Đăng ký
       </div>
       <div
-        :class="mobileDevice ? 'px-1 py-0' : 'px-4 py-1'"
+        :class="mobileDevice ? 'py-1' : 'py-2'"
         class="secondary rounded-pill appwhite--text navbtn"
         @click="openLogin"
+        style="
+          width: 95px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
       >
         Đăng nhập
       </div>
