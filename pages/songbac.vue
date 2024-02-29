@@ -1,8 +1,8 @@
 <template>
   <div class="primary">
     <Anoucement />
-    <Banner />
-    <SearchBar title="Sòng bạc" />
+    <Banner img="/songbac/banner.png" />
+    <SearchBar title="Sòng bạc" img="/sidemenu/songbac.png" />
     <v-container>
       <v-row>
         <v-col cols="12" sm="12" md="4" lg="4" class="pa-2">
@@ -17,7 +17,7 @@
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
             <div class="card-title py-2">
-              <h4>hello</h4>
+              <h4>Game</h4>
             </div>
           </div>
         </v-col>
@@ -38,14 +38,18 @@
                   @mouseover="isHover = true"
                   @mouseleave="isHover = false"
                 >
-                  <img src="/bc.png" alt="Card image" class="card-img" />
+                  <img
+                    :src="'/songbac/' + i + '.png'"
+                    alt="Card image"
+                    class="card-img"
+                  />
                   <div class="card-overlay" v-if="isHover">
                     <v-btn rounded color="secondary" @click="openLogin"
                       >chơi</v-btn
                     >
                   </div>
                   <div class="card-title">
-                    <h4>hello</h4>
+                    <h4>Game</h4>
                   </div>
                 </div>
               </v-col>
@@ -70,12 +74,16 @@
             @mouseover="isHover = true"
             @mouseleave="isHover = false"
           >
-            <img src="/bc.png" alt="Card image" class="card-img" />
+            <img
+              :src="'/songbac/' + i + '.png'"
+              alt="Card image"
+              class="card-img"
+            />
             <div class="card-overlay" v-if="isHover">
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
             <div class="card-title">
-              <h4>hello</h4>
+              <h4>Game</h4>
             </div>
           </div>
         </v-col>

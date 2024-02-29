@@ -1,8 +1,9 @@
 <template>
-  <v-app dark style="height: 100vw" :style="{ width: window?.innerWidth }">
+  <v-app dark style="height: 100vw">
     <Contactus />
     <Login />
     <Register />
+    <AdsDialog />
     <SearchDialog />
     <div class="contopMenus" v-if="!mobileDevice">
       <div
@@ -13,7 +14,7 @@
         @click="routingTo(item.to)"
       >
         <img
-          src="/vuetify-logo.svg"
+          :src="'/topmenu/tm' + (index + 1) + '.png'"
           class="mx-auto"
           width="30"
           height="30"
@@ -23,10 +24,10 @@
       </div>
     </div>
     <div class="fab1">
-      <img src="/vuetify-logo.svg" width="50" height="50" alt="" />
+      <img src="/bottomrightbtn/chat.png" width="80" height="80" alt="" />
     </div>
     <div class="fab2">
-      <img src="/vuetify-logo.svg" width="50" height="50" alt="" />
+      <img src="/bottomrightbtn/minigame.gif" width="80" height="80" alt="" />
     </div>
     <v-app-bar
       :clipped-left="true"
@@ -40,7 +41,7 @@
         @click.stop="drawer = !drawer"
         color="appwhite"
       />
-      <img class="mr-2" src="/vuetify-logo.svg" width="50" height="50" alt="" />
+      <img class="mr-2" src="/footer/bt1.png" style="width: 30%" alt="" />
       <v-spacer />
       <div
         :class="mobileDevice ? 'px-1 py-0' : 'px-4 py-1'"
@@ -57,7 +58,7 @@
         Đăng nhập
       </div>
 
-      <v-menu offset-y>
+      <v-menu offset-y v-if="!mobileDevice">
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             v-bind="attrs"
@@ -66,7 +67,13 @@
             color="primary mx-2"
             elevation="0"
           >
-            <img src="/vuetify-logo.svg" width="20" height="20" alt="" />
+            <img
+              src="/common/vn.webp"
+              width="20"
+              height="20"
+              alt=""
+              style="border-radius: 100%"
+            />
             <v-icon>mdi-menu-down</v-icon>
           </v-btn>
         </template>
@@ -79,8 +86,14 @@
                 justify-content: center;
               "
             >
-              <img :src="item.image" width="20" height="20" alt="" />
-              <span>{{ item.code }}</span>
+              <img
+                :src="item.image"
+                style="border-radius: 100%"
+                width="20"
+                height="20"
+                alt=""
+              />
+              &nbsp; <span>{{ item.code }}</span>
             </v-list-item-title>
           </v-list-item>
         </v-list>
@@ -105,13 +118,7 @@
           :class="selectingMenus == index ? 'selectingBg' : 'secondary'"
           @click.native="setTab(index)"
         >
-          <img
-            class="mr-2"
-            src="/vuetify-logo.svg"
-            width="40"
-            height="40"
-            alt=""
-          />
+          <img class="mr-2" :src="item.image" width="40" height="40" alt="" />
           <h3 class="appwhite--text">{{ item.title }}</h3>
         </router-link>
       </v-container>
@@ -121,6 +128,7 @@
       <div v-if="mobileDevice" class="topmenuMobile primary d-flex darkbg">
         <div
           v-for="(item, index) in menus"
+          :key="index"
           style="white-space: nowrap"
           @click="routingTo(item.to)"
         >
@@ -145,6 +153,7 @@
     >
       <v-btn
         v-for="(item, index) in bottomItems"
+        :key="index"
         @click="setBottomNavigate(index, item.to)"
         :color="bottomModel == index ? 'primary' : ''"
       >
@@ -174,22 +183,22 @@ export default {
       fixed: false,
       selectingMenus: getData('currentTab') || 0,
       languages: [
-        { image: '/vuetify-logo.svg', code: 'vn' },
-        { image: '/vuetify-logo.svg', code: 'en' },
+        { image: '/common/vn.webp', code: 'vn' },
+        { image: '/common/en.png', code: 'en' },
       ],
       bottomItems: [
         {
-          image: '/vuetify-logo.svg',
+          image: '/topmenu/tm1.png',
           title: 'Trang chủ',
           to: '/',
         },
         {
-          image: '/vuetify-logo.svg',
+          image: '/topmenu/tm5.png',
           title: 'Nạp tiền-Rút tiền',
           to: 'login',
         },
         {
-          image: '/vuetify-logo.svg',
+          image: '/topmenu/tm2.png',
           title: 'Tôi',
           to: 'login',
         },
@@ -223,47 +232,47 @@ export default {
       ],
       menus: [
         {
-          image: '/vuetify-logo.svg',
+          image: '/sidemenu/nohu.png',
           title: 'Nổ hũ',
           to: '/nohu',
         },
         {
-          image: '/vuetify-logo.svg',
+          image: '/sidemenu/songbac.png',
           title: 'Sòng bạc',
           to: '/songbac',
         },
         {
-          image: '/vuetify-logo.svg',
+          image: '/sidemenu/thethao.png',
           title: 'Thể thao',
           to: '/thethao',
         },
         {
-          image: '/vuetify-logo.svg',
+          image: '/sidemenu/banca.png',
           title: 'Bắn cá',
           to: '/banca',
         },
         {
-          image: '/vuetify-logo.svg',
+          image: '/sidemenu/daga.png',
           title: 'Đá gà',
           to: '/daga',
         },
         {
-          image: '/vuetify-logo.svg',
+          image: '/sidemenu/danhbai.png',
           title: 'Đánh bài',
           to: '/danhbai',
         },
         {
-          image: '/vuetify-logo.svg',
+          image: '/sidemenu/keno.png',
           title: 'Keno',
           to: '/keno',
         },
         {
-          image: '/vuetify-logo.svg',
+          image: '/sidemenu/giaodich.png',
           title: 'Giao dịch',
           to: '/giaodich',
         },
         {
-          image: '/vuetify-logo.svg',
+          image: '/sidemenu/thethaodientu.png',
           title: 'Thể thao điẹn tử',
           to: '/thethaodientu',
         },
@@ -278,10 +287,10 @@ export default {
     ...mapState('main_store', ['mobileDevice']),
   },
   created() {
-    window.addEventListener('resize', this.myEventHandlerResizeScreen)
+    window?.addEventListener('resize', this.myEventHandlerResizeScreen)
   },
   destroyed() {
-    window.removeEventListener('resize', this.myEventHandlerResizeScreen)
+    window?.removeEventListener('resize', this.myEventHandlerResizeScreen)
   },
   methods: {
     setTab(tab) {
@@ -341,7 +350,7 @@ export default {
 }
 .fab2 {
   position: fixed;
-  bottom: 18vh;
+  bottom: 23vh;
   right: 30px;
   z-index: 8;
 }

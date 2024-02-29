@@ -1,7 +1,11 @@
 <template>
   <div class="primary">
-    <Banner />
-    <SearchBar title="THỂ THAO" :showSearch="false" />
+    <Banner img="/thethao/banner.png" />
+    <SearchBar
+      title="THỂ THAO"
+      img="/sidemenu/thethao.png"
+      :showSearch="false"
+    />
     <v-container>
       <v-row>
         <v-col
@@ -10,7 +14,7 @@
           lg="4"
           class="pa-2"
           v-for="(item, index) in items"
-          :key="i"
+          :key="index"
         >
           <div
             style="height: 200px; border: 4px solid red; overflow: hidden"
@@ -25,7 +29,7 @@
               </v-col>
               <v-col cols="6">
                 <img
-                  src="/vuetify-logo.svg"
+                  :src="'/thethao/' + (index + 1) + '.png'"
                   style="width: 100%; height: 100%; object-fit: contain"
                   alt=""
                 />

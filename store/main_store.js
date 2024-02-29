@@ -6,7 +6,12 @@ export default {
     registerDialog: false,
     searchDialog: false,
     contactDialog: false,
-    mobileDevice: window?.innerWidth <= 960 ? true : false,
+    mobileDevice:
+      typeof window !== 'undefined' && window.innerWidth
+        ? window?.innerWidth <= 960
+          ? true
+          : false
+        : false,
   }),
   mutations: {
     /* le */
@@ -18,7 +23,12 @@ export default {
       state.registerDialog = data
     },
     SET_IS_MOBILE_DEVICE(state) {
-      state.mobileDevice = window?.innerWidth <= 960 ? true : false
+      state.mobileDevice =
+        typeof window !== 'undefined' && window.innerWidth
+          ? window?.innerWidth <= 960
+            ? true
+            : false
+          : false
     },
     SET_SEARCH_DIALOG(state, data) {
       state.searchDialog = data

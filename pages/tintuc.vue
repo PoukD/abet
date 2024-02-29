@@ -1,6 +1,6 @@
 <template>
   <div class="primary">
-    <SearchBar title="TIN TỨC" :showSearch="false" />
+    <SearchBar title="TIN TỨC" img="/topmenu/tm3.png" :showSearch="false" />
     <div class="pa-4">
       <v-container>
         <v-row>
@@ -9,18 +9,19 @@
             sm="4"
             lg="4"
             class="py-0 px-2 appwhite--text"
-            style="height: 400px"
+            style="height: 100%"
             v-for="i in 1"
+            :key="i"
           >
             <div style="height: 60%">
               <img
-                src="/vuetify-logo.svg"
+                :src="'/tintuc/' + i + '.png'"
                 style="width: 100%; height: 100%; object-fit: cover"
                 alt=""
               />
             </div>
             <div style="height: 40%; overflow-y: auto" class="secondary pa-2">
-              <h1>hello</h1>
+              <h1>Game</h1>
               <br />
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.

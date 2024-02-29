@@ -1,14 +1,22 @@
 <template>
   <div class="primary">
     <Anoucement />
-    <Banner />
+    <Banner img="/common/banner.png" />
     <div class="pa-4">
       <div class="appwhite--text darkbg rounded-xl">
         <v-container>
           <div class="d-flex justify-center my-3">
-            <img src="/vuetify-logo.svg" width="40" height="40" alt="" />
-            <h3 class="mx-2">GAME HOT</h3>
-            <img src="/vuetify-logo.svg" width="40" height="40" alt="" />
+            <img src="/topmenu/tm2.png" width="40" height="40" alt="" />
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <h3 class="mx-2">GAME HOT</h3>
+            </div>
+            <img src="/topmenu/tm2.png" width="40" height="40" alt="" />
           </div>
           <div class="my-3 d-flex justify-center gamehotcon">
             <div
@@ -18,11 +26,14 @@
               :class="selectingHotgame == index ? 'secondary' : ''"
               @click="
                 ;(selectingHotgame = index),
-                  (listgame =
-                    index + Math.floor(Math.random() * (15 - 8 + 1)) + 8)
+                  (listgame = Math.floor(Math.random() * (12 - 1 + 1)))
               "
             >
-              <img src="/vuetify-logo.svg" width="50" height="50" alt="" />
+              <img
+                :src="'/common/' + (index + 1) + '.png'"
+                style="border-radius: 100%; width: 100%"
+                alt=""
+              />
               <p>
                 {{ item.title }}
               </p>
@@ -45,14 +56,18 @@
                 @mouseover="isHover = true"
                 @mouseleave="isHover = false"
               >
-                <img src="/bc.png" alt="Card image" class="card-img" />
+                <img
+                  :src="'/nohu/' + listImgnohu[i - 1] + '.png'"
+                  alt="Card image"
+                  class="card-img"
+                />
                 <div class="card-overlay" v-if="isHover">
                   <v-btn rounded color="secondary" @click="openLogin"
                     >chơi</v-btn
                   >
                 </div>
                 <div class="card-title">
-                  <h4>hello</h4>
+                  <h4>Game</h4>
                 </div>
               </div>
             </v-col>
@@ -60,7 +75,7 @@
         </v-container>
       </div>
     </div>
-    <SearchBar title="Nổ hũ" />
+    <SearchBar title="Nổ hũ" img="/sidemenu/nohu.png" />
     <v-container>
       <v-row>
         <v-col cols="12" sm="12" md="4" lg="4" class="pa-2">
@@ -70,12 +85,12 @@
             @mouseover="isHover = true"
             @mouseleave="isHover = false"
           >
-            <img src="/BG.png" alt="Card image" class="card-img" />
+            <img src="/nohu/bg.png" alt="Card image" class="card-img" />
             <div class="card-overlay" v-if="isHover">
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
             <div class="card-title py-2">
-              <h4>hello</h4>
+              <h4>Game</h4>
             </div>
           </div>
         </v-col>
@@ -96,14 +111,18 @@
                   @mouseover="isHover = true"
                   @mouseleave="isHover = false"
                 >
-                  <img src="/bc.png" alt="Card image" class="card-img" />
+                  <img
+                    :src="'/nohu/' + listImgnohu[i - 1] + '.png'"
+                    alt="Card image"
+                    class="card-img"
+                  />
                   <div class="card-overlay" v-if="isHover">
                     <v-btn rounded color="secondary" @click="openLogin"
                       >chơi</v-btn
                     >
                   </div>
                   <div class="card-title">
-                    <h4>hello</h4>
+                    <h4>Game</h4>
                   </div>
                 </div>
               </v-col>
@@ -112,7 +131,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <SearchBar title="Sòng bạc" />
+    <SearchBar title="Sòng bạc" img="/sidemenu/songbac.png" />
     <v-container>
       <v-row>
         <v-col cols="12" sm="12" md="4" lg="4" class="pa-2">
@@ -127,7 +146,7 @@
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
             <div class="card-title py-2">
-              <h4>hello</h4>
+              <h4>Game</h4>
             </div>
           </div>
         </v-col>
@@ -148,14 +167,18 @@
                   @mouseover="isHover = true"
                   @mouseleave="isHover = false"
                 >
-                  <img src="/bc.png" alt="Card image" class="card-img" />
+                  <img
+                    :src="'/songbac/' + i + '.png'"
+                    alt="Card image"
+                    class="card-img"
+                  />
                   <div class="card-overlay" v-if="isHover">
                     <v-btn rounded color="secondary" @click="openLogin"
                       >chơi</v-btn
                     >
                   </div>
                   <div class="card-title">
-                    <h4>hello</h4>
+                    <h4>Game</h4>
                   </div>
                 </div>
               </v-col>
@@ -177,6 +200,7 @@ export default {
       selectingHotgame: 0,
       isHover: false,
       listgame: 8,
+      listImgnohu: [],
       titleGamehot: [
         {
           img: '',
@@ -195,6 +219,11 @@ export default {
           title: 'Thẻ',
         },
       ],
+    }
+  },
+  mounted() {
+    for (let index = 0; index < 32; index++) {
+      this.listImgnohu.push(Math.floor(Math.random() * (12 - 1) + 1))
     }
   },
   methods: {

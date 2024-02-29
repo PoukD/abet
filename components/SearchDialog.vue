@@ -37,14 +37,18 @@
                 @mouseover="isHover = true"
                 @mouseleave="isHover = false"
               >
-                <img src="/bc.png" alt="Card image" class="card-img" />
+                <img
+                  :src="'/nohu/' + listImg[i - 1] + '.png'"
+                  alt="Card image"
+                  class="card-img"
+                />
                 <div class="card-overlay" v-if="isHover">
                   <v-btn rounded color="secondary" @click="openLogin"
                     >chơi</v-btn
                   >
                 </div>
-                <div class="card-title">
-                  <h4>hello</h4>
+                <div class="card-title" style="text-align: left">
+                  <h4>Game</h4>
                 </div>
               </div>
             </v-col>
@@ -95,8 +99,13 @@ export default {
   data() {
     return {
       page: 1,
-
+      listImg: [],
       isHover: false,
+    }
+  },
+  mounted() {
+    for (let index = 0; index < 32; index++) {
+      this.listImg.push(Math.floor(Math.random() * (12 - 1) + 1))
     }
   },
   computed: {

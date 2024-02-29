@@ -18,7 +18,7 @@
           color="secondary"
         >
           <img
-            src="/vuetify-logo.svg"
+            src="/common/telegram.png"
             class="mr-2"
             width="40"
             height="40"
@@ -32,7 +32,7 @@
           color="secondary"
         >
           <img
-            src="/vuetify-logo.svg"
+            src="/common/facebook.png"
             class="mr-2"
             width="40"
             height="40"

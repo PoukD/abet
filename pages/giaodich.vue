@@ -1,9 +1,9 @@
 <template>
   <div class="primary">
     <Anoucement />
-    <Banner />
-    <SearchBar title="GIAO DỊCH" />
-    <TitleCard title="Askmetrade" />
+    <Banner img="/giaodich/banner.png" />
+    <SearchBar title="GIAO DỊCH" img="/sidemenu/giaodich.png" />
+    <TitleCard title="Askmetrade" img="/giaodich/askmetrade.webp" />
     <v-container>
       <v-row>
         <v-col
@@ -20,12 +20,16 @@
             @mouseover="isHover = true"
             @mouseleave="isHover = false"
           >
-            <img src="/bc.png" alt="Card image" class="card-img" />
+            <img
+              :src="'/giaodich/' + i + '.png'"
+              alt="Card image"
+              class="card-img"
+            />
             <div class="card-overlay" v-if="isHover">
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
             <div class="card-title">
-              <h4>hello</h4>
+              <h4>Game</h4>
             </div>
           </div>
         </v-col>

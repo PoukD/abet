@@ -2,8 +2,8 @@
   <div class="primary">
     <Anoucement />
     <Banner />
-    <SearchBar title="ĐÁNH BÀI" />
-    <TitleCard title="Arcadia Gaming" />
+    <SearchBar title="ĐÁNH BÀI" img="/sidemenu/danhbai.png" />
+    <TitleCard title="Arcadia Gaming" img="/danhbai/arcadia.webp" />
     <v-container>
       <v-row>
         <v-col
@@ -20,18 +20,22 @@
             @mouseover="isHover = true"
             @mouseleave="isHover = false"
           >
-            <img src="/bc.png" alt="Card image" class="card-img" />
+            <img
+              :src="'/danhbai/t' + i + '.png'"
+              alt="Card image"
+              class="card-img"
+            />
             <div class="card-overlay" v-if="isHover">
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
             <div class="card-title">
-              <h4>hello</h4>
+              <h4>Game</h4>
             </div>
           </div>
         </v-col>
       </v-row>
     </v-container>
-    <TitleCard title="King Midas" />
+    <TitleCard title="King Midas" img="/danhbai/kingmidas.webp" />
     <v-container>
       <v-row>
         <v-col
@@ -39,7 +43,7 @@
           md="3"
           sm="6"
           class="pa-0 mt-2 mb-2 px-2"
-          v-for="i in 35"
+          v-for="i in 22"
           :key="i"
         >
           <div
@@ -48,12 +52,16 @@
             @mouseover="isHover = true"
             @mouseleave="isHover = false"
           >
-            <img src="/bc.png" alt="Card image" class="card-img" />
+            <img
+              :src="'/danhbai/b' + i + '.png'"
+              alt="Card image"
+              class="card-img"
+            />
             <div class="card-overlay" v-if="isHover">
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
             <div class="card-title">
-              <h4>hello</h4>
+              <h4>Game</h4>
             </div>
           </div>
         </v-col>

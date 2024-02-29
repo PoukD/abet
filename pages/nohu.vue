@@ -1,8 +1,8 @@
 <template>
   <div class="primary">
     <Anoucement />
-    <Banner />
-    <SearchBar title="Nổ hũ" />
+    <Banner img="/nohu/banner.png" />
+    <SearchBar title="Nổ hũ" img="/nohu/nohu.png" />
     <v-container>
       <v-row>
         <v-col cols="12" sm="12" md="4" lg="4" class="pa-2">
@@ -12,12 +12,12 @@
             @mouseover="isHover = true"
             @mouseleave="isHover = false"
           >
-            <img src="/BG.png" alt="Card image" class="card-img" />
+            <img src="/nohu/bg.png" alt="Card image" class="card-img" />
             <div class="card-overlay" v-if="isHover">
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
             <div class="card-title py-2">
-              <h4>hello</h4>
+              <h4>Game</h4>
             </div>
           </div>
         </v-col>
@@ -38,14 +38,18 @@
                   @mouseover="isHover = true"
                   @mouseleave="isHover = false"
                 >
-                  <img src="/bc.png" alt="Card image" class="card-img" />
+                  <img
+                    :src="'/nohu/' + listImg[i - 1] + '.png'"
+                    alt="Card image"
+                    class="card-img"
+                  />
                   <div class="card-overlay" v-if="isHover">
                     <v-btn rounded color="secondary" @click="openLogin"
                       >chơi</v-btn
                     >
                   </div>
                   <div class="card-title">
-                    <h4>hello</h4>
+                    <h4>Game</h4>
                   </div>
                 </div>
               </v-col>
@@ -70,12 +74,16 @@
             @mouseover="isHover = true"
             @mouseleave="isHover = false"
           >
-            <img src="/bc.png" alt="Card image" class="card-img" />
+            <img
+              :src="'/nohu/' + listImg[i - 1] + '.png'"
+              alt="Card image"
+              class="card-img"
+            />
             <div class="card-overlay" v-if="isHover">
               <v-btn rounded color="secondary" @click="openLogin">chơi</v-btn>
             </div>
             <div class="card-title">
-              <h4>hello</h4>
+              <h4>Game</h4>
             </div>
           </div>
         </v-col>
@@ -92,6 +100,12 @@ export default {
   data() {
     return {
       isHover: false,
+      listImg: [],
+    }
+  },
+  mounted() {
+    for (let index = 0; index < 32; index++) {
+      this.listImg.push(Math.floor(Math.random() * (12 - 1) + 1))
     }
   },
   methods: {
@@ -128,7 +142,7 @@ export default {
 .card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   transition: filter 0.3s ease;
 }
 

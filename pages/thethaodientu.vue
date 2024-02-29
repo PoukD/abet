@@ -1,9 +1,18 @@
 <template>
   <div class="primary">
     <div class="banner secondary">
-      <img src="/vuetify-logo.svg" class="imgbannerdaga" alt="" />
+      <div
+        style="width: 60%; height: 60%; position: absolute; top: 10%; left: 10%"
+      >
+        <img src="/thethaodientu/banner.png" class="imgbannerdaga" alt="" />
+      </div>
+      <img src="/thethaodientu/bg-banner.png" class="imgbannerdaga" alt="" />
       <div class="center-btn">
-        <v-btn color="primary" @click="openLogin" x-large class="rounded-xl"
+        <v-btn
+          color="darkblue"
+          @click="openLogin"
+          large
+          class="rounded-xl appwhite--text"
           >Bắt đầu chơi</v-btn
         >
       </div>
@@ -28,7 +37,7 @@ export default {
 
 <style scoped>
 .banner {
-  height: 500px;
+  height: 100%;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -40,7 +49,7 @@ export default {
 }
 .center-btn {
   position: absolute;
-  top: 80%;
+  top: 60%;
   left: 0;
   right: 0;
   align-items: center;

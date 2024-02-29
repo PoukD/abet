@@ -1,6 +1,6 @@
 <template>
   <div class="primary">
-    <SearchBar title="KHUYẾN MÃI" :showSearch="false" />
+    <SearchBar title="KHUYẾN MÃI" img="/topmenu/tm2.png" :showSearch="false" />
     <div class="pa-4">
       <v-container>
         <v-row>
@@ -9,18 +9,19 @@
             sm="4"
             lg="4"
             class="py-0 px-2 appwhite--text"
-            style="height: 400px"
-            v-for="i in 3"
+            style="height: 100%"
+            v-for="i in 2"
+            :key="i"
           >
             <div style="height: 60%">
               <img
-                src="/vuetify-logo.svg"
-                style="width: 100%; height: 100%; object-fit: cover"
+                :src="'/khuyenmai/' + i + '.png'"
+                style="width: 100%; height: 100%; object-fit: fill"
                 alt=""
               />
             </div>
             <div style="height: 40%; overflow-y: auto" class="secondary pa-2">
-              <h1>hello</h1>
+              <h1>Game</h1>
               <br />
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
