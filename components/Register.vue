@@ -16,7 +16,7 @@
           mdi-close
         </v-icon>
 
-        <v-container class="myinput">
+        <v-container class="myinput px-8">
           <v-row>
             <v-col cols="12" align="center">
               <h2 class="appwhite--text mt-2 pb-4">Đăng ký</h2>
@@ -96,7 +96,7 @@
             </v-col>
           </v-row>
         </v-container>
-        <v-container class="myinput">
+        <v-container class="myinput px-8">
           <v-row>
             <v-col cols="12" sm="6" lg="6" class="py-0 px-1">
               <recaptcha />

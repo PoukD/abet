@@ -46,14 +46,14 @@
       <div
         :class="mobileDevice ? 'px-1 py-0' : 'px-4 py-1'"
         class="selectingBg rounded-pill mr-3 appwhite--text navbtn"
-        @click="openLogin"
+        @click="openRegister"
       >
         Đăng ký
       </div>
       <div
         :class="mobileDevice ? 'px-1 py-0' : 'px-4 py-1'"
         class="secondary rounded-pill appwhite--text navbtn"
-        @click="openRegister"
+        @click="openLogin"
       >
         Đăng nhập
       </div>

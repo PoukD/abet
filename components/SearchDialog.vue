@@ -15,13 +15,13 @@
         >
           mdi-close
         </v-icon>
-        <v-container class="myinput appwhite--text">
+        <v-container class="myinput appwhite--text px-8">
           <h2 class="appwhite--text mt-2 mb-3">Tìm kiếm</h2>
           <v-text-field dense class="rounded-lg" color="white" outlined>
             <v-icon slot="prepend-inner" color="appwhite"> mdi-magnify </v-icon>
           </v-text-field>
         </v-container>
-        <v-container>
+        <v-container class="px-8">
           <v-row>
             <v-col
               cols="6"

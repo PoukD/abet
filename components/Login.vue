@@ -15,7 +15,7 @@
         >
           mdi-close
         </v-icon>
-        <v-container class="myinput">
+        <v-container class="myinput px-8">
           <h2 class="appwhite--text mt-2">Đăng nhập</h2>
           <div style="text-align: left; width: 100%">
             <p class="appwhite--text ma-0">Tài khoản</p>
